@@ -1,0 +1,25 @@
+{
+  "name": "kreeda",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "db:setup": "psql -d kreeda -q -o /dev/null -f db/schema.sql -f db/seed.sql -f db/reports.sql",
+    "index": "node --env-file=.env scripts/index-qdrant.js"
+  },
+  "dependencies": {
+    "@huggingface/transformers": "^3.8.1",
+    "next": "16.4.3",
+    "pg": "^8.23.1",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "recharts": "^3.10.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/turbopack": "^4",
+    "tailwindcss": "^4"
+  },
+  "type": "module"
+}
